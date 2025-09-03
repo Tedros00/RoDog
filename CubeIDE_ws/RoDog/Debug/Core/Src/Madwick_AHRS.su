@@ -1,0 +1,4 @@
+../Core/Src/Madwick_AHRS.c:41:6:MadgwickAHRSupdate	192	static
+../Core/Src/Madwick_AHRS.c:140:6:MadgwickAHRSupdateIMU	120	static
+../Core/Src/Madwick_AHRS.c:212:7:invSqrt	32	static
+../Core/Src/Madwick_AHRS.c:222:6:quaternion_to_euler	88	static

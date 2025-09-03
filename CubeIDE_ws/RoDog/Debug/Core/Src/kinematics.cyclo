@@ -1,0 +1,7 @@
+../Core/Src/kinematics.c:9:6:IK_leg	3
+../Core/Src/kinematics.c:75:11:knee_to_crank	1
+../Core/Src/kinematics.c:81:12:IK_body	13
+../Core/Src/kinematics.c:144:6:TransformMatrix	2
+../Core/Src/kinematics.c:210:6:FK_leg	3
+../Core/Src/kinematics.c:288:12:FK_body	2
+../Core/Src/kinematics.c:345:7:rad_to_degrees	1

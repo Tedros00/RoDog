@@ -1,0 +1,4 @@
+../Core/Src/Madwick_AHRS.c:41:6:MadgwickAHRSupdate	7
+../Core/Src/Madwick_AHRS.c:140:6:MadgwickAHRSupdateIMU	4
+../Core/Src/Madwick_AHRS.c:212:7:invSqrt	1
+../Core/Src/Madwick_AHRS.c:222:6:quaternion_to_euler	2

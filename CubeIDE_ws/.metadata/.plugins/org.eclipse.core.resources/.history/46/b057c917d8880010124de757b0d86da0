@@ -1,0 +1,96 @@
+/*
+ * kinematics.h
+ *
+ *  Created on: May 21, 2022
+ *      Author: Wissam
+ */
+
+#ifndef INC_KINEMATICS_H_
+#define INC_KINEMATICS_H_
+
+#include "main.h"
+//IK matrices
+extern float32_t CH0xyz[];
+
+//body center to hip offsets in mm
+#define CENTER_TO_HIP_X 73.00f
+#define CENTER_TO_HIP_Y 00.00f
+#define CENTER_TO_HIP_Z 28.50f
+
+//link lengths in mm
+#define L_HIPS 42.600f
+#define L_COXA 46.50f
+#define L_LEG 104.0f
+#define MAX_L 180.00f
+
+//angular offsets in radians
+#define HIP_ANGULAR_OFFSET 0.3296127273609414f
+#define KNEE_TO_BALL_ANGULAR_OFFSET 1.1143428382843825f
+#define L_KNEE_TO_BALL 31.0f
+#define L_CRANK 35.0f
+#define MOTOR_TO_BALL_ANGULAR_OFFSET 0.3f
+#define L_BALL_JOINT 60.0f
+#define KNEE_ANGULAR_OFFSET 0.2413681267948966
+
+//ball joint mechanism
+#define MAX_KNEE 2*PI/3.0f
+#define MIN_KNEE PI/6.0f
+#define MAX_CRANK PI/2.0f
+#define MIN_CRANK -PI/2.0f
+
+//Limits of each axis in radians
+#define MAX_H  PI/3
+#define MIN_H -PI/3
+#define MAX_T -PI/3
+#define MIN_T PI/3
+#define MAX_K PI/6
+#define MIN_K 3*PI/4
+
+//limits of body translation in mm
+#define MAX_TX 40.0f
+#define MIN_TX -40.0f
+#define MAX_TY 19.0f
+#define MIN_TY -30.0f
+#define MAX_TZ	45.0f
+#define MIN_TZ	-45.0f
+
+//limits of body rotation radians
+#define MAX_PITCH PI/12
+#define MIN_PITCH -PI/12
+#define MAX_ROLL PI/12
+#define MIN_ROLL -PI/12
+#define MAX_YAW	 PI/12
+#define MIN_YAW	 -PI/12
+
+//local standing home position of the end effector if the body is also on home position
+#define HOME_X  10.0f
+#define HOME_Y 110.50f
+#define HOME_Z L_HIPS
+
+#define AMPLITUDE_CRANCK  	5*PI/12.0f - 0.2131
+#define OFFSET_CRANK  		1.28438f
+#define MOTOR_CENTER_XC   0.0f
+#define MOTOR_CENTER_YC  -10.7f
+#define MOTOR_CENTER_ZC  -3.16
+
+//ball joint mechanism'#define AMP_CRANK_SINE 0.79512212
+#define AMP_CRANK_SINE 0.79512215f
+#define OMEGA_CRANK_SINE 0.97431939f
+#define TIME_OFFSET_CRANK_SINE -1.33585758f
+#define ANGULAR_OFFSET_CRANK_SINE 1.155874f
+
+void IK_leg(float * HTK ,  float * EExyz);
+arm_status IK_body(RODOG_Control *r, arm_matrix_instance_f32 * EE);
+float rad_to_degrees(float rad);
+
+void FK_leg(float32_t*HTK_fb , arm_matrix_instance_f32 * EE_fb);
+arm_status FK_body(RODOG_Control *r ,  arm_matrix_instance_f32 * EE_fb);
+void get_crank_angle(float32_t * HTK_cmd);
+float32_t knee_to_crank(float32_t knee);
+
+//get transform matrix from Rodog Pose
+void TransformMatrix(RODOG_Control * r , arm_matrix_instance_f32 * M , bool inv);
+//local end effector inverse kinematic position, returns the angles Hips, Torsa, knee in radiant
+
+
+#endif /* INC_KINEMATICS_H_ */

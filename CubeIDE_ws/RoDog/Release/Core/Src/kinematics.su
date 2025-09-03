@@ -1,0 +1,6 @@
+../Core/Src/kinematics.c:9:6:IK_leg	80	static
+../Core/Src/kinematics.c:136:6:TransformMatrix	376	static
+../Core/Src/kinematics.c:73:12:IK_body	240	static
+../Core/Src/kinematics.c:202:6:FK_leg	352	static
+../Core/Src/kinematics.c:280:12:FK_body	200	static
+../Core/Src/kinematics.c:336:7:rad_to_degrees	0	static
