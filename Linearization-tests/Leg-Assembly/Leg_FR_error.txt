@@ -1,0 +1,4 @@
+Constrained Instances: 'Base^Leg_FR-1', 'Base^Leg_FR-1', 'Leg_FR'
+Constraint Name: Symmetric1
+Error Details: Constraint is not supported. The constraint has been ignored.
+---------------------------------------------------------------------------------
